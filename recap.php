@@ -1,5 +1,4 @@
 <?php
-
  include'template/header.php';
  echo '<h1>Panier</h1>';
     if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
@@ -22,7 +21,9 @@
                     "<td>" . $index . "</td>",
                     "<td>" . $product['name'] . "</td>",
                     "<td>" . number_format($product['price'], 2, ",", "&nbsp;") . "&nbsp;€</td>",
-                    "<td>" . $product['qtt'] . "</td>",
+                    "<td><p>" . $product['qtt'] . "<a href='panier_fct.php?index=$index&todo=sub' class='btn-grad'>-</a>
+                    <a href='panier_fct.php?index=$index&todo=add' class='btn-grad'>+</a>
+                    <a href='panier_fct.php' class='btn-grad'>0</a></td>",
                     "<td>" . number_format($product['total'], 2, ",", "&nbsp;") . "&nbsp;€</td>",
                 "</tr>";
             $totalGeneral+= $product['total'];

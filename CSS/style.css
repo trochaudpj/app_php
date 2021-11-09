@@ -45,8 +45,12 @@ h1{
    box-shadow: 0 0 20px #eee;
    border-radius: 10px;
    display: block;
+   text-decoration: none;
+   width: fit-content;
  }
-
+a{
+    text-decoration: none;
+}
  .btn-grad:hover {
    background-position: right center; /* change the direction of the change here */
    color: #fff;
@@ -65,20 +69,21 @@ h1{
     width: 100%;
   }
   
-  #recap td, #customers th {
+  #recap td, #recap th {
     border: 1px solid rgb(0, 0, 0);
-    padding: 8px;
+    padding: 5px;
+  
   }
   
   #recap tr:nth-child(even){background-color: #fcd6d6;}
   
   #recap tr:hover {background-color: #ddd;}
   
-  #recap th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-image: linear-gradient(to right, #1D2B64 0%, #6d98f7  51%, #1D2B64  100%);    color: white;
+ 
+   .modifier a{
+padding: 1px;
+margin:1px;
+
   }
   .notification { 
     text-decoration: none;
