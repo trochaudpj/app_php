@@ -1,25 +1,16 @@
 <?php
 session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
-    <title>Récapitulatif des produits</title>
-</head>
-
-<body>
-    <?php
+ include'template/header.php';
+ echo '<h1>Liste des produits</h1>';
     if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
         echo "<p>Aucun produit en session...</p>";
     } else {
-        echo "<table>",
+        echo "<table id='recap'>",
                 "<thead>",
                     "<tr>",
                         "<th>#</th>",
                         "<th>Nom</th>",
+                        "<th>Prix</th>",
                         "<th>Quantité</th>",
                         "<th>Total</th>",
                     "</tr>",
@@ -45,6 +36,4 @@ session_start();
     }
     
     ?>
-</body>
-
-</html>
+ <?php include'template/footer.php'; ?>

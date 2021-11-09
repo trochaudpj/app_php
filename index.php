@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="eng">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="with=device-width, initial-scale=1.0">
-        <title>Ajout produit</title>
-    </head>
-    <body>
+        <?php include'template/header.php'; ?>
         <h1>Ajouter un produit</h1>
         <form action="Traitement.php" method="post">
             <p>
@@ -27,8 +20,7 @@
                 </label>
             </p>
             <p>
-                <input type="submit" name="submit" value="Ajouter produit">
+                <input type="submit" name="submit" class ="btn-grad" value="Ajouter produit">
             </p>
         </form>
-    </body>
-</html>
+      <?php include'template/footer.php'; ?>

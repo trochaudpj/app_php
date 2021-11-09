@@ -14,6 +14,10 @@ if(isset($_POST['submit'])){
         ];
         $_SESSION['products'][] = $product;
     }
+    header("Location:recap.php");
+die;
+}else{
+    header("Location:index.php");
+die;
 }
 
-header("Location:index.php");
