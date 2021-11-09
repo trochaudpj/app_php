@@ -29,7 +29,8 @@
             $totalGeneral+= $product['total'];
         }
         echo "<tr>",
-                "<td colspan=4>Total général : </td>",
+                "<td colspan=3>Total général : </td>",
+                "<td><a href='traitement.php?todo=trash' ><i class='far fa-trash-alt'></i></a></td>",
                 "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;") . "&nbsp;€</strong></td>",
             "</tr>",
         "</tbody>",
