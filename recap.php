@@ -21,16 +21,16 @@
                     "<td>" . $index . "</td>",
                     "<td>" . $product['name'] . "</td>",
                     "<td>" . number_format($product['price'], 2, ",", "&nbsp;") . "&nbsp;€</td>",
-                    "<td><a href='traitement.php?index=$index&todo=sub' ><i class='fas fa-minus'></i></a>". $product['qtt'] . "
+                    "<td><a href='traitement.php?index=$index&todo=sub'   ><i class='fas fa-minus'></i></a>". $product['qtt'] . "
                     <a href='traitement.php?index=$index&todo=add' ><i class='fas fa-plus'></i></a>
-                    <a href='traitement.php?index=$index&todo=del' ><i class='far fa-trash-alt'></i></a></td>",
+                    <a href='traitement.php?index=$index&todo=del' class='picto-item' aria-label='suprimer le produit'  ><i class='far fa-trash-alt'></i></a></td>",
                     "<td>" . number_format($product['total'], 2, ",", "&nbsp;") . "&nbsp;€</td>",
                 "</tr>";
             $totalGeneral+= $product['total'];
         }
         echo "<tr>",
                 "<td colspan=3>Total général : </td>",
-                "<td><a href='traitement.php?todo=trash' ><i class='far fa-trash-alt'></i></a></td>",
+                "<td><a href='traitement.php?todo=trash' class='picto-item' aria-label='Vider le panier'  ><i class='far fa-trash-alt' ></i></a></td>",
                 "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;") . "&nbsp;€</strong></td>",
             "</tr>",
         "</tbody>",

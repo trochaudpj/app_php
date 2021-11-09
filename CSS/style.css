@@ -34,58 +34,57 @@ h1{
 }
 
 .btn-grad {
-    background-image: linear-gradient(to right, #1D2B64 0%, #F8CDDA  51%, #1D2B64  100%);
-   margin: 5px;
-   padding: 10px 25px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px #eee;
-   border-radius: 10px;
-   display: block;
-   text-decoration: none;
- }
+background-image: linear-gradient(to right, #1D2B64 0%, #F8CDDA  51%, #1D2B64  100%);
+margin: 5px;
+padding: 10px 25px;
+text-align: center;
+text-transform: uppercase;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;            
+box-shadow: 0 0 20px #eee;
+border-radius: 10px;
+display: block;
+text-decoration: none;
+}
 
- .btn-grad:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
- input{
-    background-size: 200% auto;
-              
-    box-shadow: 0 0 20px #eee;
-    border-radius: 5px;
-    display: block;
- }
+.btn-grad:hover {
+background-position: right center; /* change the direction of the change here */
+color: #fff;
+text-decoration: none;
+}
+input{
+background-size: 200% auto;
+            
+box-shadow: 0 0 20px #eee;
+border-radius: 5px;
+display: block;
+}
 
- #recap {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  #recap a{
-    color: black;
-    margin: 1em;
-  }
-  
-  #recap td, #recap th {
-    border: 1px solid rgb(0, 0, 0);
-    padding: 5px;
-  
-  }
-  #recap th{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+#recap {
+border-collapse: collapse;
+width: 100%;
+}
+#recap a{
+color: black;
+margin: 1em;
+}
+
+#recap td, #recap th {
+border: 1px solid rgb(0, 0, 0);
+padding: 5px;
+
+}
+#recap th{
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 background-color: burlywood;
-  }
-  
-  #recap tr:nth-child(even){background-color: #fcd6d6;}
-  
-  #recap tr:hover {background-color: #ddd;}
-  
+}
+
+#recap tr:nth-child(even){background-color: #fcd6d6;}
+
+#recap tr:hover {background-color: #ddd;}
  
-   .modifier a{
+.modifier a{
 padding: 1px;
 margin:1px;
 
@@ -96,7 +95,7 @@ margin:1px;
     position: relative;
     display: inline-block;
    
-  }
+}
   
   .notification .badge {
     position: absolute;
@@ -106,4 +105,46 @@ margin:1px;
   border-radius: 50%;
 background-color: black;
   color: white;
-  }
+}
+/* info bulles*/.picto-item {
+  position: relative;  /*les .picto-item deviennent référents*/
+  cursor: help;
+  border-radius: 50%;
+}
+
+/* on génère un élément :after lors du survol et du focus :*/
+
+.picto-item:hover:after,
+.picto-item:focus:after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  position: absolute;
+  top: -2.4em;
+  left: 50%;
+	transform: translateX(-50%); /* on centre horizontalement  */
+  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+  white-space: nowrap;  /* on interdit le retour à la ligne*/
+  padding: 5px 14px;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  font-size: 1.2rem;
+
+}
+
+/* on génère un second élément en :before pour la flèche */
+
+[aria-label]:hover:before,
+[aria-label]:focus:before {
+    content: "▼";
+    position: absolute;
+    top: -1em;
+    left: 50%;
+    transform: translateX(-50%); /* on centre horizontalement  */
+    font-size: 20px;
+    color: #ffffff;
+}
+
+/* pas de contour durant le :focus */
+[aria-label]:focus {
+    outline: none;
+}
