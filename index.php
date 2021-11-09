@@ -1,4 +1,4 @@
-        <?php session_start();
+        <?php 
         include'template/header.php'; ?>
         <h1>Ajouter un produit</h1>
         <form action="Traitement.php" method="post">

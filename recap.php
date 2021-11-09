@@ -1,5 +1,5 @@
 <?php
-session_start();
+
  include'template/header.php';
  echo '<h1>Panier</h1>';
     if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {

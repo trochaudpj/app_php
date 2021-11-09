@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,18 +16,23 @@
         <nav id="menu" class="side-spaced">
             <div id="menu-links">
                 <a href="index.php">HOME</a>
-                
-           
-   
+                <a href="recap.php" class=" fas fa-shopping-cart  btn-grad notification">
+                    <span class="badge">
+                        <?php if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
+                            echo "#";
+                        } else {
+                            echo count($_SESSION['products']);
+                        }
+                        ?>
+                    </span>
 
-<a href="recap.php" class=" fas fa-shopping-cart  btn-grad notification">
-
-  <span class="badge">  <?php if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
-                    echo "#";
-                } else {
-                    echo count($_SESSION['products']);
-                } ?></span>
-</a>
+                </a>
+                <?php
+                if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
+                    echo $_SESSION['message'];
+                    $_SESSION['message'] = '';
+                }
+                ?>
             </div>
         </nav>
     </header>
