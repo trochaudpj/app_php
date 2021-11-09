@@ -1,4 +1,5 @@
-        <?php include'template/header.php'; ?>
+        <?php session_start();
+        include'template/header.php'; ?>
         <h1>Ajouter un produit</h1>
         <form action="Traitement.php" method="post">
             <p>
@@ -23,4 +24,5 @@
                 <input type="submit" name="submit" class ="btn-grad" value="Ajouter produit">
             </p>
         </form>
+
       <?php include'template/footer.php'; ?>

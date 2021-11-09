@@ -1,9 +1,9 @@
 <?php
 session_start();
  include'template/header.php';
- echo '<h1>Liste des produits</h1>';
+ echo '<h1>Panier</h1>';
     if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
-        echo "<p>Aucun produit en session...</p>";
+        echo "<p>Aucun produit dans votre panier...</p>";
     } else {
         echo "<table id='recap'>",
                 "<thead>",
