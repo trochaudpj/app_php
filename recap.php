@@ -21,9 +21,9 @@
                     "<td>" . $index . "</td>",
                     "<td>" . $product['name'] . "</td>",
                     "<td>" . number_format($product['price'], 2, ",", "&nbsp;") . "&nbsp;€</td>",
-                    "<td><p>" . $product['qtt'] . "<a href='traitement.php?index=$index&todo=sub' class='btn-grad'>-</a>
-                    <a href='traitement.php?index=$index&todo=add' class='btn-grad'>+</a>
-                    <a href='traitement.php?index=$index&todo=del' class='btn-grad'>0</a></td>",
+                    "<td><a href='traitement.php?index=$index&todo=sub' ><i class='fas fa-minus'></i></a>". $product['qtt'] . "
+                    <a href='traitement.php?index=$index&todo=add' ><i class='fas fa-plus'></i></a>
+                    <a href='traitement.php?index=$index&todo=del' ><i class='far fa-trash-alt'></i></a></td>",
                     "<td>" . number_format($product['total'], 2, ",", "&nbsp;") . "&nbsp;€</td>",
                 "</tr>";
             $totalGeneral+= $product['total'];
