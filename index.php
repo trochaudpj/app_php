@@ -1,4 +1,4 @@
-<?php
+<?php session_start(); 
 ob_start();
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -25,6 +25,7 @@ switch ($page):
         break;
     default:
         $title = "App :: 404";
+        $_SESSION['message'] = 'ERROR Peugeot 404 !';
         include 'pages/NotFound.php';
         break;
 endswitch;
