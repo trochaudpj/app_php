@@ -54,10 +54,10 @@ if (isset($_POST['submit'])) {
         $_SESSION['products'][] = $product;
         $_SESSION['message'] = 'produit ajouté';
     } else {
-        $_SESSION['message'] = 'saisie invalide';
+        $_SESSION['message'] = $name.'/'.$qtt.'saisie invalide';
     }
 
-    header("Location:recap.php");
+    header("Location:index.php");
     die;
 } else {
 
