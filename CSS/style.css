@@ -20,9 +20,7 @@ body {
 .formA{
     flex: 1;
 }
-.formB{
-    flex: 1;
-}
+
 .bannerTop{
     background-image: linear-gradient(to right bottom, rgb(32, 218, 233),rgb(7, 1, 70));
     
@@ -215,3 +213,9 @@ text-align: right;
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  .img404 {
+      background-size: cover;
+    background-image: url(../img/shadocks1.gif) ;
+  }
+  

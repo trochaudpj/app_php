@@ -1,6 +1,4 @@
 <?php session_start(); ?>
-   <?php $title = 'catalog'; ?>
-
 <?php ob_start(); ?>
 
         <div class="formA">

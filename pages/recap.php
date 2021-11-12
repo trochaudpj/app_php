@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-   <?php $title = 'recap'; ?>
 <?php ob_start(); ?>
         <div class="formA">
             <h1>Panier</h1>

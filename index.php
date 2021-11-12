@@ -5,26 +5,27 @@ if (isset($_GET['page'])) {
 } else {
     $page = 'accueil';
 }
+
 switch ($page):
     case 'accueil':
-        $title = "Site perso :: Accueil";
+        $title = "App :: Accueil";
         include 'pages/accueil.php';
         break;
     case 'catalog':
-        $title = "Site perso :: Page de catalogue";
+        $title = "App :: Page de catalogue";
         include 'pages/catalog.php';
         break;
     case 'traitement':
-        $title = "Site perso :: Page de traitement";
+        $title = "App :: Page de traitement";
         include 'pages/traitement.php';
         break;
     case 'recap':
-        $title = "Site perso :: Page de recap";
+        $title = "App :: Page de recap";
         include 'pages/recap.php';
         break;
     default:
-        $title = "Site perso :: Accueil";
-        include 'pages/accueil.php';
+        $title = "App :: 404";
+        include 'pages/NotFound.php';
         break;
 endswitch;
 $contenu = ob_get_clean();

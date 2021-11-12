@@ -1,6 +1,4 @@
 <?php session_start(); ?>
-<?php $title = 'accueil'; ?>
-
 <?php ob_start(); 
 
 if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
