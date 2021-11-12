@@ -42,7 +42,6 @@ if (isset($_POST['submit'])) {
             "min_range" => 0,
         ]
     ]);
-
     if ($name && $price && $qtt) {
         $product = [
             "name" => $name,
@@ -53,14 +52,18 @@ if (isset($_POST['submit'])) {
         $_SESSION['products'][] = $product;
         $_SESSION['message'] = 'produit ajouté';
     } else {
-        
-        $_SESSION['message'] = $name.'/'.$qtt.'saisie invalide';
+       $message ='';
+        if(!$name){ $message .= 'nom produit ';}
+        if(!$price && !$name){$message .= '& ';}
+        if(!$price){ $message .= 'prix ';}
+        if((!$name && !$qtt) || (!$price && !$qtt) ){$message .= '& ';}
+        if(!$qtt){ $message .= 'quantité';}
+       
+        $_SESSION['message'] = $message.' invalide!';
     }
-
     header("Location:index.php?page=recap");
     die;
 } else {
-
     header("Location:index.php?page=accueil");
     die;
 }

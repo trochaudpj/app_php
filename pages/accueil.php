@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php ob_start(); 
+<?php ob_start();
 
 if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
     echo '<h2 id="message">' . $_SESSION['message'] . '</h2>';
