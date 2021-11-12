@@ -1,6 +1,12 @@
         <?php 
         include'template/header.php'; ?>
         <h1>Ajouter un produit</h1>
+       <?php
+        if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
+            echo '<h2>'.$_SESSION['message'].'</h2>';
+            $_SESSION['message'] = '';
+        }
+        ?>
         <form action="Traitement.php" method="post">
             <p>
                 <label>
@@ -24,5 +30,5 @@
                 <input type="submit" name="submit" class ="btn-grad" value="Ajouter produit">
             </p>
         </form>
-
+        </div>
       <?php include'template/footer.php'; ?>

@@ -1,6 +1,11 @@
-<?php
- include'template/header.php';
+<?php include'template/header.php';
  echo '<h1>Panier</h1>';
+
+ if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
+     echo '<h2>'.$_SESSION['message'].'</h2>';
+     $_SESSION['message'] = '';
+ }
+ 
     if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
         echo "<p>Aucun produit dans votre panier...</p>";
     } else {
@@ -38,4 +43,5 @@
     }
     
     ?>
+     </div>
  <?php include'template/footer.php'; ?>
