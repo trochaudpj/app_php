@@ -1,6 +1,5 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -15,26 +14,36 @@
     <header>
         <nav id="menu" class="side-spaced">
 
-            <a href="index.php" class="fas fa-home  btn-grad"></a>
+            <a href="index.php" class="fas fa-home  btn-grad "></a>
 
             <div id="titreTxt">PHP-APPLI</div>
 
-            <a href="recap.php" class=" fas fa-shopping-cart  btn-grad notification">
-                <span class="badge">
-                    <?php if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
-                        echo "#";
+            <a href="recap.php" class=" fas fa-shopping-cart  btn-grad notification dropdown">
+                <div class="dropdown-content">
+                    <?php
+                    if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
+                        echo "<p>Aucun produit dans votre panier...</p>";
                     } else {
-                        echo count($_SESSION['products']);
+                        $totalGeneral = 0;
+                        echo "<table>";
+                        foreach ($_SESSION['products'] as $index => $product) {
+                            $totalGeneral += $product['total'];
+                            echo '<tr><td>' . $product['qtt'] . '</td><td>  </td><td>' . $product['name'] . '</td></tr>';
+                        }
+                        echo '<tr><td colspan=3 class=dropdown-total>' . $totalGeneral . '€</td></tr></table>'; ?>
+                </div>
+                <span class="badge">
+                <?php if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
+                            echo "#";
+                        } else {
+                            echo count($_SESSION['products']);
+                        }
                     }
-                    ?>
+                ?>
                 </span>
             </a>
 
 
         </nav>
- 
-    </header>     
 
-
-      
-    <div class="wrapper">
+    </header>

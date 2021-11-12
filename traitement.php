@@ -1,8 +1,8 @@
 <?php
 session_start();
 // (◣◢)ψ on detruit le panier (◣◢)ψ
-if (($_GET['todo'] == 'trash')){
-    unset( $_SESSION['products']);
+if (($_GET['todo'] == 'trash')) {
+    unset($_SESSION['products']);
     $_SESSION['message'] = 'suppression du panier effectuée.';
 }
 // inc & dec de Q produit
@@ -15,12 +15,12 @@ if (isset($_GET['todo']) && isset($_GET['index'])) {
             $_SESSION['products'][$_GET['index']]['qtt']--;
         }
         $_SESSION['products'][$_GET['index']]['total'] = $_SESSION['products'][$_GET['index']]['price'] * $_SESSION['products'][$_GET['index']]['qtt'];
-        $_SESSION['message'] = 'quantité produit' . $_GET['index'] . ' mise a jour.';
+        $_SESSION['message'] = 'quantité produit mise a jour.';
     }
 
     if ($_GET['todo'] == 'del') {
         unset($_SESSION['products'][$_GET['index']]);
-        $_SESSION['message'] = 'suppression produit effectuée.';
+        $_SESSION['message'] = 'suppression produit  effectuée.';
         header("Location:recap.php");
         die;
     }
