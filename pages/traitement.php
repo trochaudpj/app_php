@@ -17,19 +17,18 @@ if (isset($_GET['todo']) && isset($_GET['index'])) {
         $_SESSION['products'][$_GET['index']]['total'] = $_SESSION['products'][$_GET['index']]['price'] * $_SESSION['products'][$_GET['index']]['qtt'];
         $_SESSION['message'] = 'quantité produit mise a jour.';
     }
-
+//suppression produit
     if ($_GET['todo'] == 'del') {
         unset($_SESSION['products'][$_GET['index']]);
         $_SESSION['message'] = 'suppression produit  effectuée.';
-        header("Location:recap.php");
+        header("Location:index.php?page=recap");
         die;
     }
-
-    header("Location:recap.php");
+    header("Location:index.php?page=recap");
     die;
 }
 
-// gestion du formulaire 
+// gestion du formulaire d entree produit
 if (isset($_POST['submit'])) {
     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
     $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, [
@@ -54,13 +53,14 @@ if (isset($_POST['submit'])) {
         $_SESSION['products'][] = $product;
         $_SESSION['message'] = 'produit ajouté';
     } else {
+        
         $_SESSION['message'] = $name.'/'.$qtt.'saisie invalide';
     }
 
-    header("Location:index.php");
+    header("Location:index.php?page=recap");
     die;
 } else {
 
-    header("Location:index.php");
+    header("Location:index.php?page=accueil");
     die;
 }

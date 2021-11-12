@@ -1,5 +1,8 @@
+<?php session_start(); ?>
+   <?php $title = 'catalog'; ?>
 
-   
+<?php ob_start(); ?>
+
         <div class="formA">
             <h1>catalogue</h1>
             <?php
@@ -33,5 +36,9 @@
 
             ?>
         </div>
+     
+<?php $content = ob_get_clean(); ?>
+
+<?php require('template/template.php'); ?>
  
   
