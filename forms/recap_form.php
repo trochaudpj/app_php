@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 switch ($_GET['todo']):
     case 'trash':
         unset($_SESSION['products']);
@@ -14,8 +14,13 @@ switch ($_GET['todo']):
         die;
     case 'sub':
         $_SESSION['products'][$_GET['index']]['qtt']--;
-        $_SESSION['products'][$_GET['index']]['total'] = $_SESSION['products'][$_GET['index']]['price'] * $_SESSION['products'][$_GET['index']]['qtt'];
-        $_SESSION['message'] = 'quantité produit mise a jour.';
+        if ($_SESSION['products'][$_GET['index']]['qtt'] == 0){
+            unset($_SESSION['products'][$_GET['index']]);
+            $_SESSION['message'] = 'suppression produit  effectuée.';
+        }else{
+            $_SESSION['products'][$_GET['index']]['total'] = $_SESSION['products'][$_GET['index']]['price'] * $_SESSION['products'][$_GET['index']]['qtt'];
+            $_SESSION['message'] = 'quantité produit mise a jour.';  
+        }
         header("Location:index.php?page=recap");
         die;
     case 'del':
@@ -24,4 +29,3 @@ switch ($_GET['todo']):
         header("Location:index.php?page=accueil");
         die;
 endswitch;
-?>

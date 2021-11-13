@@ -28,7 +28,6 @@ if (isset($_POST['submit'])) {
         if(!$price){ $message .= 'prix ';}
         if((!$name && !$qtt) || (!$price && !$qtt) ){$message .= '& ';}
         if(!$qtt){ $message .= 'quantité';}
-       
         $_SESSION['message'] = $message.' invalide!';
     }
     header("Location:index.php?page=recap");

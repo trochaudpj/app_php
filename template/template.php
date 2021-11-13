@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -18,7 +17,6 @@
             <div class="menu">
                 <a href="index.php?page=accueil" class="fas fa-home  btn-grad "></a>
                 <a href="index.php?page=catalog" class="fas fa-list-ol  btn-grad "></a>
-
                 <div id="titreTxt">PHP-APPLI</div>
                 <div><a href="index.php?page=recap" class=" fas fa-shopping-cart  btn-grad notification dropdown">
                         <div class="dropdown-content">
@@ -32,7 +30,8 @@
                                     $totalGeneral += $product['total'];
                                     echo '<tr><td>' . $product['qtt'] . '</td><td>  </td><td>' . $product['name'] . '</td><td> ' . $product['price'] . '€</td></tr>';
                                 }
-                                echo '<tr><td colspan=4 class=dropdown-total>total:' . $totalGeneral . '€</td></tr></table>'; ?>
+                                echo '<tr><td colspan=4 class=dropdown-total>total:' . $totalGeneral . '€</td></tr></table>';
+                            ?>
                         </div>
                         <span class="badge">
                         <?php if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
@@ -48,13 +47,11 @@
             </div>
         </nav>
     </header>
-    </div>
-    </div>
+
     <div class="wrapper">
         <div class="formA">
             <?= $content ?>
         </div>
     </div>
 </body>
-
 </html>
