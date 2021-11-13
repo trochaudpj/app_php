@@ -23,7 +23,7 @@
         "<tbody>";
         foreach ($_SESSION['products'] as $index => $product) {
             echo "<tr>",
-            "<td><a href='traitement.php?index=$index&todo=del' class='picto-item' aria-label='suprimer le produit'  ><i class='far fa-trash-alt'></i></a>" . $index . "</td>",
+            "<td><a href='index.php?page=recap_form&index=$index&todo=del' class='picto-item' aria-label='suprimer le produit'  ><i class='far fa-trash-alt'></i></a>" . $index . "</td>",
             "<td>" . $product['name'] . "</td>",
             "<td>" . number_format($product['price'], 2, ",", "&nbsp;") . "&nbsp;€</td>",
             "</tr>";

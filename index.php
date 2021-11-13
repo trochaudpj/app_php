@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 ob_start();
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -15,13 +15,17 @@ switch ($page):
         $title = "App :: Page de catalogue";
         include 'pages/catalog.php';
         break;
-    case 'traitement':
+    case 'entry_form':
         $title = "App :: Page de traitement";
-        include 'pages/traitement.php';
+        include 'forms/entry_form.php';
         break;
     case 'recap':
         $title = "App :: Page de recap";
         include 'pages/recap.php';
+        break;
+    case 'recap_form':
+        $title = "App :: Page de modif";
+        include 'forms/recap_form.php';
         break;
     default:
         $title = "App :: 404";

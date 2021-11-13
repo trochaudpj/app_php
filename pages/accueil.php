@@ -6,7 +6,7 @@ if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
     $_SESSION['message'] = '';
 }
 ?>
-<form action="index.php?page=traitement" method="post">
+<form action="index.php?page=entry_form" method="post">
     <p>
         <label>
             Nom du produit :
