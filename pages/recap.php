@@ -1,8 +1,7 @@
 <?php
 if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">';
-    echo  $_SESSION['message'];
-?>
+    echo   '<i class="bi bi-exclamation-circle-fill"> </i>'.$_SESSION['message'];?>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php
