@@ -2,17 +2,16 @@
 <?php ob_start(); ?>
 
 <div class="formA">
-    <h1>catalogue</h1>
+    <h3 class="display-3">Catalogue</h1>
     <?php
     if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
         echo '<h2 id="message">' . $_SESSION['message'] . '</h2>';
         $_SESSION['message'] = '';
     }
-
     if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
         echo "<p>Aucun produit en magasin</p>";
     } else {
-        echo "<table id='recap'>",
+        echo "<table class='table table-striped table-warning table-hover table-bordered '>",
         "<thead>",
         "<tr>",
         "<th>#</th>",
@@ -23,16 +22,14 @@
         "<tbody>";
         foreach ($_SESSION['products'] as $index => $product) {
             echo "<tr>",
-            "<td><a href='index.php?page=recap_form&index=$index&todo=del' class='picto-item' aria-label='suprimer le produit'  ><i class='far fa-trash-alt'></i></a>" . $index . "</td>",
-            "<td>" . $product['name'] . "</td>",
+            "<td><a  href='index.php?page=recap_form&index=$index&todo=del' class='bi bi-trash btn btn-outline' data-bs-toggle='tooltip' data-bs-placement='right' title='Suprimer'></a>" .' '.  $index.' '.  "</td>",
+            "<td>" .' '. $product['name'] .' '. "</td>",
             "<td>" . number_format($product['price'], 2, ",", "&nbsp;") . "&nbsp;€</td>",
             "</tr>";
         }
         echo "</tbody>",
         "</table>";
-    }
-
-    ?>
+    } ?>
 </div>
 
 <?php $content = ob_get_clean(); ?>

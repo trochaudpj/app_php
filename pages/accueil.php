@@ -5,29 +5,27 @@ if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
     echo '<h2 id="message">' . $_SESSION['message'] . '</h2>';
     $_SESSION['message'] = '';
 }
-?>
+?> <h3 class="display-3">Accueil</h3>
 <form action="index.php?page=entry_form" method="post">
-    <p>
-        <label>
-            Nom du produit :
-            <input type="text" name="name">
-        </label>
-    </p>
-    <p>
-        <label>
-            Prix du produit :
-            <input type="number" step="any" name="price">
-        </label>
-    </p>
-    <p>
-        <label>
-            Quantité désirée :
-            <input type="number" name="qtt" value="1">
-        </label>
-    </p>
-    <p>
-        <input type="submit" name="submit" class="btn-grad" value="Ajouter produit">
-    </p>
+   
+    <div class="mb-3">
+        <label class="form-label">
+            Nom du produit :</label><div>
+        <input type="text" class="form-control-sm" name="name"></div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Prix du produit : </label><div>
+        <input type="number" class="form-control-sm" step="any" name="price"></div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Quantité désirée :</label><div>
+        <input type="number" class="form-control-sm" name="qtt" value="1"></div>
+    </div>
+    <div class="mb-3">
+        <button type="submit" name="submit" class="btn  bi bi-arrow-return-right accueil-submit" value="Ajouter produit"></button>
+    </div>
 </form>
 
 <?php $content = ob_get_clean(); ?>
