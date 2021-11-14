@@ -1,8 +1,8 @@
 <?php session_start();
-ob_start();
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-} else {
+ob_start() ;
+if(isset($_GET['page'])){
+    $page = $_GET['page'] ;
+} else { 
     $page = 'accueil';
 }
 
@@ -17,7 +17,7 @@ switch ($page):
         break;
     case 'entry_form':
         $title = "App :: Page de traitement";
-        include 'forms/entry_form.php';
+        include 'forms/form.php';
         break;
     case 'recap':
         $title = "App :: Page de recap";
@@ -33,5 +33,5 @@ switch ($page):
         include 'pages/NotFound.php';
         break;
 endswitch;
-$contenu = ob_get_clean();
+$content = ob_get_clean() ;
 include 'template/template.php';

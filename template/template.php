@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,9 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link href="./CSS/style.css" rel="stylesheet" />
- 
+
     <title><?= $title ?></title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,7 +50,9 @@
                                         echo  "<li><a class='dropdown-item' href='index.php?page=recap'>" . $product['qtt'] . " " . $product['name'] . " " . $product['price'] . "€</a></li>";
                                     }
                                     echo "<li><hr class='dropdown-divider'></li><li><a class='dropdown-item' href='index.php?page=recap'>total:" . $totalGeneral . "€</a></li>";
-                                } ?>
+                                }
+
+                                ?>
                             </ul>
                         </li>
                     </ul>
@@ -56,11 +60,8 @@
             </div>
         </nav>
     </header>
-    <div class="wrapper">
-        <div class="formA">
             <?= $content ?>
-        </div>
-    </div>
+     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
