@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php?page=accueil">Navbar</a>
+                <a id='titre' class="navbar-brand" href="index.php?page=accueil">PHP APP</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -37,8 +37,7 @@
                                                                     } else {
                                                                         echo count($_SESSION['products']);
                                                                     }
-                                                                    ?></span>
-                            </a>
+                                                                    ?></span></a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <?php
                                 if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
