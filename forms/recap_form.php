@@ -3,13 +3,13 @@
 switch ($_GET['todo']):
     case 'trash':
         unset($_SESSION['products']);
-        $_SESSION['message'] = 'suppression du panier effectuée.';
+        $_SESSION['message'] = 'Suppression du panier effectuée.';
         header("Location:index.php?page=recap");
         die;
     case 'add':
         $_SESSION['products'][$_GET['index']]['qtt']++;
         $_SESSION['products'][$_GET['index']]['total'] = $_SESSION['products'][$_GET['index']]['price'] * $_SESSION['products'][$_GET['index']]['qtt'];
-        $_SESSION['message'] = 'quantité produit mise a jour.';
+        $_SESSION['message'] = 'Quantité produit mise a jour.';
         header("Location:index.php?page=recap");
         die;
     case 'sub':

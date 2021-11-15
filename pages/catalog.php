@@ -13,7 +13,6 @@ if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
         <div class="formA">
             <h3 class="display-3">Catalogue</h1>
                 <?php
-
                 if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
                     echo "<p>Aucun produit en magasin</p>";
                 } else {

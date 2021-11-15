@@ -20,10 +20,10 @@ if (isset($_POST['submit'])) {
             "total" => $price * $qtt,
         ];
         $_SESSION['products'][] = $product;
-        $_SESSION['message'] = 'produit ajouté';
+        $_SESSION['message'] = 'Produit ajouté';
     } else {
        $message ='';
-        if(!$name){ $message .= 'nom produit ';}
+        if(!$name){ $message .= 'Nom du produit ';}
         if(!$price && !$name){$message .= '& ';}
         if(!$price){ $message .= 'prix ';}
         if((!$name && !$qtt) || (!$price && !$qtt) ){$message .= '& ';}

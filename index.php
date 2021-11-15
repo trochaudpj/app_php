@@ -1,10 +1,12 @@
 <?php session_start();
 ob_start() ;
+$page=$_GET['page']?$_GET['page'] : $page='accueil';
+/* ancienne condition, remplacee par ternaire ci dessus
 if(isset($_GET['page'])){
     $page = $_GET['page'] ;
 } else { 
     $page = 'accueil';
-}
+}*/
 
 switch ($page):
     case 'accueil':

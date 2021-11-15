@@ -39,4 +39,9 @@ table{
 }
    
 #titre{
-    text-shadow: 8px 4px 4px rgba(0,0,0,0.90);}   
+    text-shadow: 8px 4px 4px rgba(0,0,0,0.90);
+}   
+#logo{
+    font-size: 2em;
+    fill:  linear-gradient(45deg, hsl(19,67%,54%),hsl(64,67%,54%),hsl(109,67%,54%),hsl(154,67%,54%),hsl(199,67%,54%),hsl(244,67%,54%),hsl(289,67%,54%),hsl(334,67%,54%));
+}

@@ -8,9 +8,5 @@ if (isset($_SESSION['message']) || !empty($_SESSION['message'])) {
     unset($_SESSION['message']);
 }
 ?>
-<div class="wrapper">
-    <div class="formA">
-
-        <img src="./img/peugeot-404.jpg" width="100%">
-    </div>
-</div>
+<img src="./img/peugeot-404.jpg" width="100%">
+ 
